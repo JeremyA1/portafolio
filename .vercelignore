@@ -1,0 +1,7 @@
+.claude
+scripts
+docs
+README.md
+.env*
+.gitignore
+.vercel

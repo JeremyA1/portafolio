@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jeremy — Portafolio</title>
+  <meta name="description" content="Portafolio de proyectos web: diseño y desarrollo de sitios y apps que se sienten vivas." />
+  <meta name="theme-color" content="#08080a" />
+  <meta property="og:title" content="Jeremy — Portafolio" />
+  <meta property="og:description" content="Diseño y desarrollo de sitios y apps web." />
+  <meta property="og:image" content="assets/projects/ports-cover.jpg" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <script>document.documentElement.classList.add("js");</script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script defer src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script type="module" src="js/main.js"></script>
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="cursor" aria-hidden="true"><span class="cursor__label">Ver</span></div>
+
+  <!-- Navegación -->
+  <header class="nav" data-nav>
+    <a class="nav__brand" href="#top" aria-label="Inicio">
+      <span data-site="name">Jeremy</span>
+    </a>
+    <nav class="nav__links" aria-label="Principal">
+      <a href="#trabajos">Trabajos</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <a class="btn btn--light btn--sm magnetic" href="#contacto">
+      Hablemos <svg class="icon"><use href="#i-arrow-right-up" /></svg>
+    </a>
+  </header>
+
+  <main id="top">
+    <!-- Hero -->
+    <section class="hero" data-hero>
+      <div class="hero__bg" aria-hidden="true">
+        <div class="aurora aurora--1"></div>
+        <div class="aurora aurora--2"></div>
+        <div class="aurora aurora--3"></div>
+        <div class="hero__grid"></div>
+        <div class="hero__spot"></div>
+      </div>
+
+      <div class="hero__inner container">
+        <h1 class="hero__title" aria-label="Construyo webs que se sienten vivas.">
+          <span class="line" aria-hidden="true"><span class="line__in">Construyo webs</span></span>
+          <span class="line" aria-hidden="true"><span class="line__in">que se <em class="serif">sienten</em></span></span>
+          <span class="line" aria-hidden="true"><span class="line__in"><span class="glow" data-text="vivas.">vivas.</span></span></span>
+        </h1>
+
+        <p class="hero__lead" data-intro>
+          Diseño y desarrollo sitios y aplicaciones web con interfaces cuidadas,
+          movimiento con intención y un rendimiento que no se nota.
+        </p>
+
+        <div class="hero__cta" data-intro>
+          <a class="btn btn--light magnetic" href="#trabajos">
+            Ver proyectos <svg class="icon"><use href="#i-arrow-down" /></svg>
+          </a>
+          <a class="btn btn--ghost magnetic" href="#contacto">
+            <svg class="icon"><use href="#i-chat-round-dots" /></svg> Escríbeme
+          </a>
+        </div>
+      </div>
+
+      <!-- Ventana de navegador que se endereza con el scroll -->
+      <div class="showcase container" data-showcase>
+        <div class="showcase__frame" data-showcase-frame>
+          <div class="browser">
+            <div class="browser__bar">
+              <span class="browser__dots"><i></i><i></i><i></i></span>
+              <span class="browser__url"><svg class="icon"><use href="#i-global" /></svg><span data-showcase-url></span></span>
+              <span class="browser__spacer"></span>
+            </div>
+            <div class="browser__screen" data-showcase-screen></div>
+          </div>
+        </div>
+        <div class="showcase__glow" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <!-- Marquee de capacidades -->
+    <section class="marquee" aria-label="Capacidades">
+      <div class="marquee__track" data-marquee></div>
+    </section>
+
+    <!-- Proyectos -->
+    <section class="work" id="trabajos">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow" data-reveal><svg class="icon"><use href="#i-widget-5" /></svg> Trabajos seleccionados</p>
+          <h2 class="section-title" data-reveal>
+            Proyectos <em class="serif">recientes</em>
+            <sup class="section-count" data-project-count>(00)</sup>
+          </h2>
+        </header>
+        <div class="work__list" data-projects></div>
+      </div>
+    </section>
+
+    <!-- Servicios -->
+    <section class="services" id="servicios">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow" data-reveal><svg class="icon"><use href="#i-magic-stick-3" /></svg> Qué hago</p>
+          <h2 class="section-title" data-reveal>De la idea a la <em class="serif">web publicada</em></h2>
+        </header>
+        <div class="services__grid">
+          <article class="service" data-reveal>
+            <svg class="icon service__icon"><use href="#i-palette" /></svg>
+            <h3>Diseño de interfaces</h3>
+            <p>Jerarquía clara, tipografía con carácter y una paleta que hace que cada proyecto tenga voz propia.</p>
+          </article>
+          <article class="service" data-reveal>
+            <svg class="icon service__icon"><use href="#i-code-square" /></svg>
+            <h3>Desarrollo front-end</h3>
+            <p>Código ligero y accesible, responsive de verdad y listo para publicarse en Vercel.</p>
+          </article>
+          <article class="service" data-reveal>
+            <svg class="icon service__icon"><use href="#i-stars" /></svg>
+            <h3>Apps con IA</h3>
+            <p>Herramientas que entienden fotos y texto para resolver problemas concretos del día a día.</p>
+          </article>
+          <article class="service" data-reveal>
+            <svg class="icon service__icon"><use href="#i-cursor" /></svg>
+            <h3>Movimiento e interacción</h3>
+            <p>Animaciones de scroll y microinteracciones que guían, sin marear, y respetan a quien pide menos movimiento.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contacto -->
+    <section class="contact" id="contacto">
+      <div class="contact__bg" aria-hidden="true"></div>
+      <div class="container contact__inner">
+        <p class="eyebrow" data-reveal><svg class="icon"><use href="#i-letter" /></svg> Contacto</p>
+        <h2 class="contact__title" data-reveal>
+          ¿Tienes una idea?<br /><span class="glow" data-text="Hagámosla real.">Hagámosla real.</span>
+        </h2>
+        <div class="contact__actions" data-reveal>
+          <a class="btn btn--light btn--lg magnetic" data-site="email-link" href="#">
+            <svg class="icon"><use href="#i-letter" /></svg> <span data-site="email"></span>
+          </a>
+          <button class="btn btn--ghost btn--lg magnetic" type="button" data-copy-email>
+            <svg class="icon"><use href="#i-copy" /></svg> <span data-copy-label>Copiar correo</span>
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__row">
+      <p>© <span data-year></span> <span data-site="name">Jeremy</span>. Hecho a mano.</p>
+      <ul class="footer__socials" data-socials></ul>
+      <a class="footer__top" href="#top">Volver arriba <svg class="icon"><use href="#i-arrow-right-up" /></svg></a>
+    </div>
+    <div class="footer__word" aria-hidden="true" data-site="name">Jeremy</div>
+  </footer>
+
+  <!-- Vista de detalle de proyecto (se abre con #/proyecto/slug) -->
+  <div class="detail" data-detail role="dialog" aria-modal="true" aria-labelledby="detail-title" hidden>
+    <div class="detail__scroll" data-lenis-prevent data-detail-scroll></div>
+  </div>
+</body>
+</html>
