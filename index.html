@@ -44,19 +44,14 @@
   <main id="top">
     <!-- Hero -->
     <section class="hero" data-hero>
-      <div class="hero__bg" aria-hidden="true">
-        <div class="aurora aurora--1"></div>
-        <div class="aurora aurora--2"></div>
-        <div class="aurora aurora--3"></div>
-        <div class="hero__grid"></div>
-        <div class="hero__spot"></div>
-      </div>
+      <!-- Onda de partículas: se deforma con el cursor y se abre con el scroll -->
+      <canvas class="hero__wave" data-wave aria-hidden="true"></canvas>
+      <div class="hero__fade" aria-hidden="true"></div>
 
       <div class="hero__inner container">
         <h1 class="hero__title" aria-label="Construyo webs que se sienten vivas.">
           <span class="line" aria-hidden="true"><span class="line__in">Construyo webs</span></span>
-          <span class="line" aria-hidden="true"><span class="line__in">que se <em class="serif">sienten</em></span></span>
-          <span class="line" aria-hidden="true"><span class="line__in"><span class="glow" data-text="vivas.">vivas.</span></span></span>
+          <span class="line" aria-hidden="true"><span class="line__in">que se <em class="serif">sienten</em> <span class="shine">vivas.</span></span></span>
         </h1>
 
         <p class="hero__lead" data-intro>
@@ -74,7 +69,7 @@
         </div>
       </div>
 
-      <!-- Ventana de navegador que se endereza con el scroll -->
+      <!-- Ventana de navegador que se endereza con el scroll y va mostrando los proyectos -->
       <div class="showcase container" data-showcase>
         <div class="showcase__frame" data-showcase-frame>
           <div class="browser">
@@ -87,6 +82,12 @@
           </div>
         </div>
         <div class="showcase__glow" aria-hidden="true"></div>
+      </div>
+
+      <div class="hero__meta container" data-reveal>
+        <span>Diseño UX/UI · Desarrollo web</span>
+        <span><b data-project-total>00</b> proyectos publicados</span>
+        <a class="hero__scroll" href="#trabajos">Ver todos <span class="hero__scroll-line"></span></a>
       </div>
     </section>
 

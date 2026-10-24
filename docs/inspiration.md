@@ -41,6 +41,26 @@ Lo útil no es una plantilla concreta sino el lenguaje visual que comparten.
 - Movimiento continuo y lento en el contenido (vídeos en bucle, partículas), interfaz quieta.
 - Transiciones de UI cortas y suaves; nada rebota.
 
+## Segunda pasada: un hero menos genérico (2026-10-24)
+
+El primer hero (auroras moradas y rosas, cuadrícula y ventana con brillo detrás) se sentía genérico.
+Revisé estos ejemplos buscando algo más propio:
+
+- **Agent Wave**: una onda de partículas monocroma, como una tela iluminada, con el titular centrado debajo
+  y una línea de datos al pie del hero. Es la base del nuevo hero.
+- **Particle Self**: fondo negro puro y un objeto generativo como protagonista. El color no viene de luces de fondo.
+- **Hover Ink** y **Obsidian**: tipografía enorme a sangre. Quedan como idea para una sección futura.
+
+Adaptación (código propio, en `js/wave.js`):
+- Malla de miles de puntos en perspectiva que ondula con varias senoides. Se pinta en canvas 2D por lotes
+  de opacidad para que vaya fluida.
+- El cursor levanta la tela y tiñe de melocotón los puntos cercanos: es el único color del hero.
+- Al hacer scroll la onda crece, sube y se desvanece mientras el texto sale.
+- «vivas.» lleva un brillo plateado que la recorre, en lugar del degradado con resplandor.
+- Se quitaron las auroras, la cuadrícula y el foco que seguía al ratón.
+- La ventana inclinada que se endereza con el scroll se mantiene, porque da dinamismo. Ahora va debajo de la onda,
+  sin el resplandor de color: lleva un reflejo neutro y un filo de luz melocotón en el borde superior.
+
 ## Cómo lo aplicamos en el portafolio
 - Hero con titular gigante, una palabra en cursiva y otra con degradado + glow.
 - Proyectos en tarjetas grandes con miniatura viva (captura del sitio con desplazamiento lento al pasar el ratón).

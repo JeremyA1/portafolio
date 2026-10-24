@@ -1,4 +1,5 @@
 import { site, projects } from "./projects.js";
+import { initWave } from "./wave.js";
 
 const $ = (sel, root = document) => root.querySelector(sel);
 const $$ = (sel, root = document) => [...root.querySelectorAll(sel)];
@@ -68,6 +69,7 @@ function renderMarquee() {
 
 /* ───────────── Showcase del hero ───────────── */
 function renderShowcase() {
+  const frame = $("[data-showcase-frame]");
   const screen = $("[data-showcase-screen]");
   const url = $("[data-showcase-url]");
   screen.innerHTML = projects
@@ -88,9 +90,8 @@ function renderShowcase() {
     }, 3800);
   }
   // Clic en la ventana: abre el proyecto que se está viendo
-  $("[data-showcase-frame]").addEventListener("click", () => (location.hash = `#/proyecto/${projects[current].slug}`));
-  $("[data-showcase-frame]").style.cursor = "pointer";
-  $("[data-showcase-frame]").setAttribute("data-cursor", "");
+  frame.addEventListener("click", () => (location.hash = `#/proyecto/${projects[current].slug}`));
+  frame.setAttribute("data-cursor", "");
 }
 
 /* ───────────── Proyectos ───────────── */
@@ -116,6 +117,7 @@ function browser(url, inner) {
 function renderProjects() {
   const total = pad(projects.length);
   $("[data-project-count]").textContent = `(${total})`;
+  $("[data-project-total]").textContent = total;
   $("[data-projects]").innerHTML = projects
     .map(
       (p, i) => `
@@ -312,16 +314,6 @@ function initNav() {
 }
 
 /* ───────────── Interacciones de puntero ───────────── */
-function initSpotlight() {
-  const hero = $("[data-hero]");
-  const spot = $(".hero__spot");
-  hero.addEventListener("pointermove", (e) => {
-    const r = hero.getBoundingClientRect();
-    spot.style.setProperty("--mx", `${e.clientX - r.left}px`);
-    spot.style.setProperty("--my", `${e.clientY - r.top}px`);
-  });
-}
-
 function initMagnetic(root = document) {
   if (!finePointer) return;
   $$(".magnetic", root).forEach((el) => {
@@ -366,7 +358,6 @@ function initMotion() {
   // Sin GSAP (CDN caído) se muestra todo sin animar
   if (!hasGsap()) {
     document.documentElement.classList.add("is-static");
-    $("[data-showcase-frame]").style.transform = "none";
     return;
   }
   const { gsap, ScrollTrigger } = window;
@@ -388,24 +379,24 @@ function initMotion() {
   // Entrada del hero
   const intro = gsap.timeline({ defaults: { ease: "expo.out" } });
   intro
-    .to(".hero__title .line__in", { y: 0, duration: 1.4, stagger: 0.11 }, 0.15)
-    .to(".hero__lead, .hero__cta", { opacity: 1, y: 0, duration: 1.2, stagger: 0.1 }, 0.75)
-    .from("[data-showcase]", { opacity: 0, y: 80, duration: 1.6 }, 0.9);
+    .to(".hero__title .line__in", { y: 0, duration: 1.4, stagger: 0.12 }, 0.6)
+    .to(".hero__lead, .hero__cta", { opacity: 1, y: 0, duration: 1.2, stagger: 0.1 }, 1.1)
+    .from("[data-showcase]", { opacity: 0, y: 90, duration: 1.6 }, 1.3);
 
   // La ventana se endereza al hacer scroll
   gsap.to("[data-showcase-frame]", {
     rotateX: 0,
     scale: 1,
     ease: "none",
-    scrollTrigger: { trigger: "[data-showcase]", start: "top 80%", end: "top 12%", scrub: 0.6 },
+    scrollTrigger: { trigger: "[data-showcase]", start: "top 85%", end: "top 15%", scrub: 0.6 },
   });
 
   // Parallax suave del texto del hero al salir
   gsap.to(".hero__inner", {
-    yPercent: -18,
-    opacity: 0.2,
+    yPercent: -14,
+    opacity: 0,
     ease: "none",
-    scrollTrigger: { trigger: "[data-hero]", start: "top top", end: "45% top", scrub: true },
+    scrollTrigger: { trigger: "[data-hero]", start: "top top", end: () => `+=${innerHeight * 0.75}`, scrub: true },
   });
 
   // Revelado de bloques
@@ -458,8 +449,8 @@ fillSite();
 renderMarquee();
 renderShowcase();
 renderProjects();
+initWave($("[data-wave]"));
 initNav();
-initSpotlight();
 initMagnetic();
 initCursor();
 initMotion();
