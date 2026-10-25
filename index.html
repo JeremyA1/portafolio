@@ -24,7 +24,16 @@
 </head>
 <body>
   <div class="grain" aria-hidden="true"></div>
-  <div class="cursor" aria-hidden="true"><span class="cursor__label">Ver</span></div>
+  <!-- Cursor: un punto; sobre un proyecto se abre en un disco de cristal con texto girando -->
+  <div class="cursor" aria-hidden="true">
+    <div class="cursor__spin">
+      <svg class="cursor__ring" viewBox="0 0 100 100">
+        <defs><path id="cursor-path" d="M50,50 m-38,0 a38,38 0 1,1 76,0 a38,38 0 1,1 -76,0" /></defs>
+        <text><textPath href="#cursor-path" textLength="236" lengthAdjust="spacing" data-cursor-text>VER CASO • VER CASO •</textPath></text>
+      </svg>
+    </div>
+    <svg class="icon cursor__icon"><use href="#i-arrow-right-up" /></svg>
+  </div>
 
   <!-- Navegación -->
   <header class="nav" data-nav>

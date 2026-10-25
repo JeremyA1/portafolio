@@ -91,7 +91,7 @@ function renderShowcase() {
   }
   // Clic en la ventana: abre el proyecto que se está viendo
   frame.addEventListener("click", () => (location.hash = `#/proyecto/${projects[current].slug}`));
-  frame.setAttribute("data-cursor", "");
+  frame.setAttribute("data-cursor", "Abrir proyecto");
 }
 
 /* ───────────── Proyectos ───────────── */
@@ -123,7 +123,7 @@ function renderProjects() {
       (p, i) => `
     <article class="project" style="--accent:${p.accent};--i:${i}" data-project>
       <div class="project__card">
-        <a class="project__media" href="#/proyecto/${p.slug}" data-cursor aria-label="Ver detalles de ${esc(p.title)}">
+        <a class="project__media" href="#/proyecto/${p.slug}" data-cursor="Ver caso" aria-label="Ver detalles de ${esc(p.title)}">
           ${browser(p.url, screenFor(p))}
         </a>
         <div class="project__info">
@@ -336,13 +336,25 @@ function initMagnetic(root = document) {
 function initCursor() {
   if (!finePointer) return;
   const cursor = $(".cursor");
+  const ring = $("[data-cursor-text]", cursor);
   let x = innerWidth / 2, y = innerHeight / 2, cx = x, cy = y;
+  let label = "";
   addEventListener("pointermove", (e) => {
     x = e.clientX;
     y = e.clientY;
     cursor.classList.add("is-visible");
-    cursor.classList.toggle("is-view", !!e.target.closest("[data-cursor]"));
+    const target = e.target.closest("[data-cursor]");
+    cursor.classList.toggle("is-view", !!target);
+    // El texto del anillo sale del atributo: data-cursor="Ver caso" → «VER CASO • VER CASO • VER CASO •»
+    const next = (target?.dataset.cursor || "Ver").toUpperCase();
+    if (target && next !== label) {
+      label = next;
+      // Dos repeticiones por vuelta: con el disco pequeño, tres se amontonan
+      ring.textContent = Array(2).fill(`${label} •`).join(" ");
+    }
   });
+  addEventListener("pointerdown", () => cursor.classList.add("is-pressed"));
+  addEventListener("pointerup", () => cursor.classList.remove("is-pressed"));
   document.addEventListener("pointerleave", () => cursor.classList.remove("is-visible"));
   const tick = () => {
     cx += (x - cx) * 0.2;
