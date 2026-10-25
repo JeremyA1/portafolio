@@ -710,6 +710,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 .detail__next:hover strong .icon { transform: translate(6px, -6px); }
 
 /* ───────────────────────── Cursor ───────────────────────── */
+/* Invisible por defecto (el puntero normal basta); solo aparece sobre un proyecto */
 .cursor {
   position: fixed;
   left: 0;
@@ -719,8 +720,6 @@ ul { margin: 0; padding: 0; list-style: none; }
   height: 12px;
   margin: -6px 0 0 -6px;
   border-radius: 50%;
-  background: #fff;
-  mix-blend-mode: difference;
   pointer-events: none;
   opacity: 0;
   display: grid;
@@ -729,9 +728,9 @@ ul { margin: 0; padding: 0; list-style: none; }
     width 0.6s var(--ease), height 0.6s var(--ease), margin 0.6s var(--ease),
     background 0.45s var(--ease), box-shadow 0.45s var(--ease), opacity 0.3s;
 }
-.cursor.is-visible { opacity: 1; }
 
 /* Sobre un proyecto: disco de cristal ahumado */
+.cursor.is-visible.is-view { opacity: 1; }
 .cursor.is-view {
   width: 76px;
   height: 76px;
@@ -739,7 +738,6 @@ ul { margin: 0; padding: 0; list-style: none; }
   background: rgba(12, 12, 15, 0.58);
   -webkit-backdrop-filter: blur(14px) saturate(170%);
   backdrop-filter: blur(14px) saturate(170%);
-  mix-blend-mode: normal;
   box-shadow:
     inset 0 0 0 1px rgba(255, 255, 255, 0.16),
     inset 0 1px 0 rgba(255, 255, 255, 0.28),
