@@ -7,7 +7,7 @@ const root = join(import.meta.dirname, "..");
 const port = Number(process.env.PORT) || 5173;
 const types = {
   ".html": "text/html; charset=utf-8", ".css": "text/css", ".js": "text/javascript",
-  ".svg": "image/svg+xml", ".jpg": "image/jpeg", ".png": "image/png", ".webp": "image/webp",
+  ".svg": "image/svg+xml", ".jpg": "image/jpeg", ".png": "image/png", ".webp": "image/webp", ".ico": "image/x-icon",
   ".md": "text/markdown; charset=utf-8",
 };
 

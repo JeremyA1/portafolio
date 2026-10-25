@@ -797,14 +797,14 @@ ul { margin: 0; padding: 0; list-style: none; }
   .showcase__frame { transform: rotateX(16deg) scale(0.94); }
   .nav__links { display: none; }
   .project { position: relative; top: 0; }
-  .project__card { grid-template-columns: 1fr; }
+  .project__card { grid-template-columns: minmax(0, 1fr); }
   .project__info { padding: 4px 6px 8px; }
   .project__kicker { padding-top: 6px; }
-  .detail__body { grid-template-columns: 1fr; }
+  .detail__body { grid-template-columns: minmax(0, 1fr); }
 }
 @media (max-width: 560px) {
   body { font-size: 16px; }
-  .services__grid { grid-template-columns: 1fr; }
+  .services__grid { grid-template-columns: minmax(0, 1fr); }
   .service h3 { margin-top: 28px; }
   .hero__inner { padding-top: 34vh; }
   .hero__meta { grid-template-columns: 1fr auto; }
@@ -813,7 +813,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   .browser__dots i { width: 8px; height: 8px; }
   .browser__url { font-size: 0.66rem; padding: 3px 10px; }
   .browser__spacer { display: none; }
-  .detail__stats { grid-template-columns: 1fr; }
+  .detail__stats { grid-template-columns: minmax(0, 1fr); }
   .contact__actions .btn { width: 100%; }
   .project__stats { gap: 12px; }
   .project__stats strong { font-size: 1.3rem; }

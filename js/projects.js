@@ -16,6 +16,40 @@ export const site = {
 
 export const projects = [
   {
+    slug: "jeremy-perez-portfolio",
+    title: "Portafolio de Product Design",
+    kicker: "Portafolio · 3D interactivo",
+    year: "2026",
+    url: "https://jeremy-perez-portfolio.vercel.app",
+    accent: "#9fb7c9",
+    icon: "layers-minimalistic",
+    summary:
+      "Mi portafolio como Senior Product Designer: un hero 3D de metal líquido que pasa de «complejo» a «claro» y cinco casos de producto, de fintech a hospitality.",
+    description: [
+      "El reto era contar en una sola página qué hago: convertir lógica operativa compleja —aranceles, permisos, precios, reportes— en interfaces claras. El hero lo muestra de forma literal: una masa de metal líquido rodeada de fragmentos que cambia cuando deslizas de «Complex» a «Clear».",
+      "Debajo, cinco casos seleccionados entre 2024 y 2026 —OceanCar, Qadrao, Laid Back Llama, Seoopia y NCGVilla— con rol, año, plataforma y cliente, más una sección de capacidades y herramientas.",
+    ],
+    role: "Diseño, 3D y desarrollo",
+    stack: ["Three.js", "Lenis", "Iconify", "Montserrat"],
+    highlights: [
+      "Escena 3D en Three.js que se gira arrastrando y reacciona al pasar el ratón por las palabras.",
+      "Control deslizante «Complex → Clear» que transforma la escena en tiempo real.",
+      "Cinco casos de estudio con rol, año, plataforma y cliente, y enlaces a los sitios en vivo.",
+      "Pantalla de carga con contador y scroll suave.",
+    ],
+    stats: [
+      { value: "5", label: "casos de estudio" },
+      { value: "5", label: "clientes" },
+      { value: "2024–26", label: "años de trabajo" },
+    ],
+    images: {
+      cover: "assets/projects/jp-cover.jpg",
+      // Al pasar el ratón cambia a la sección de trabajos
+      hover: "assets/projects/jp-work.jpg",
+      gallery: ["assets/projects/jp-work.jpg", "assets/projects/jp-qadrao.jpg", "assets/projects/jp-ncgvilla.jpg"],
+    },
+  },
+  {
     slug: "ports-de-videojuegos",
     title: "Ports de videojuegos",
     kicker: "Directorio · Datos abiertos",
