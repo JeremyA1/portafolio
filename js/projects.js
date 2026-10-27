@@ -16,6 +16,40 @@ export const site = {
 
 export const projects = [
   {
+    slug: "sa3-barberia",
+    title: "Sa3 Barbería",
+    kicker: "Landing · Reservas por WhatsApp",
+    year: "2026",
+    url: "https://sa3-barberia.vercel.app",
+    accent: "#ff5233",
+    icon: "scissors",
+    summary:
+      "Landing para una barbería en República Dominicana: el cliente reserva su corte por WhatsApp en 30 segundos con un bot, sin llamadas ni filas.",
+    description: [
+      "Una web pensada para que reservar sea un solo gesto. Cada servicio abre WhatsApp con el mensaje ya escrito, y el bot de Sa3 pide el nombre, ofrece solo los huecos libres de verdad, confirma la cita y manda un recordatorio.",
+      "El diseño se apoya en un titular enorme —«Tu corte sin espera», con el poste de barbero dentro de la O—, una lista de servicios con precio en RD$ y duración, un teléfono que reproduce la conversación con el bot paso a paso y un horario semanal que indica si está abierto y cuánto falta para cerrar.",
+    ],
+    role: "Diseño y desarrollo",
+    stack: ["Vite", "Tailwind CSS", "Bot de WhatsApp", "Open Sans"],
+    highlights: [
+      "Cada servicio abre WhatsApp con el mensaje de reserva ya escrito.",
+      "Demo del bot en un teléfono: saludo, servicio, día y hora, confirmación y recordatorio.",
+      "Horario semanal con estado «Abierto ahora» y cuenta atrás hasta el cierre.",
+      "Opción en el pie para reducir las animaciones.",
+    ],
+    stats: [
+      { value: "6", label: "servicios con precio" },
+      { value: "30 s", label: "para reservar" },
+      { value: "4", label: "pasos con el bot" },
+    ],
+    images: {
+      cover: "assets/projects/sa3-cover.jpg",
+      // Al pasar el ratón cambia a la lista de servicios
+      hover: "assets/projects/sa3-services.jpg",
+      gallery: ["assets/projects/sa3-services.jpg", "assets/projects/sa3-booking.jpg"],
+    },
+  },
+  {
     slug: "jeremy-perez-portfolio",
     title: "Portafolio de Product Design",
     kicker: "Portafolio · 3D interactivo",

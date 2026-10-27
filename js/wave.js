@@ -45,7 +45,8 @@ export function initWave(canvas) {
 
   function draw(now) {
     frame = requestAnimationFrame(draw);
-    if (!visible) return;
+    // Sin tamaño (panel oculto, CSS aún sin cargar) no hay nada que pintar, y dividir entre h daría NaN
+    if (!visible || !w || !h) return;
 
     const t = (now - start) / 1000;
     const intro = 1 - Math.pow(1 - Math.min(1, t / 2.8), 3); // la onda nace plana y se levanta
@@ -98,7 +99,7 @@ export function initWave(canvas) {
         const edge = Math.min(1, (spanX - Math.abs(x)) / 0.55);
         let alpha = (0.1 + 0.9 * near) * (0.28 + 0.72 * crest) * edge * fade;
         alpha = Math.min(1, alpha + touch * 0.55);
-        if (alpha < 0.04) continue;
+        if (!(alpha >= 0.04)) continue; // también descarta NaN
 
         const size = (0.7 + 1.7 * near + touch * 1.4) * dpr;
         const level = Math.min(LEVELS - 1, Math.floor(alpha * LEVELS));

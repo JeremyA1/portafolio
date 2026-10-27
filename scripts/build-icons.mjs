@@ -10,6 +10,7 @@ const names = [
   "layers-minimalistic", "bolt", "eye", "calendar", "user-circle",
   "chat-round-dots", "link-round", "cpu-bolt", "smartphone", "plain",
   "star", "magnifer", "camera", "clock-circle", "chart-2", "test-tube",
+  "scissors",
 ];
 
 const symbols = [];
