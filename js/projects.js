@@ -86,35 +86,35 @@ export const projects = [
   {
     slug: "ports-de-videojuegos",
     title: "Ports de videojuegos",
-    kicker: "Directorio · Datos abiertos",
+    kicker: "Catálogo · Guías para jugar",
     year: "2026",
     url: "https://ports-de-videojuegos.vercel.app",
     accent: "#ff6a3d",
     icon: "gamepad",
     summary:
-      "Un mapa de los ports, decompilaciones, recompilaciones y motores reimplementados de videojuegos, ordenados por estrellas de GitHub.",
+      "Los clásicos de consola, nativos en tu PC: un catálogo de ports, decompilaciones y recompilaciones con guías para instalarlos y juegos que se abren en el navegador.",
     description: [
-      "Cientos de proyectos de la comunidad para jugar clásicos en PC y otras plataformas estaban repartidos entre listas, wikis y repositorios sueltos. Este directorio los reúne en un solo sitio y los ordena por lo que más importa: popularidad y actividad.",
-      "La portada propone dos recorridos —lo más popular y lo que se movió hace poco— y una exploración por consola donde cada «cartucho» muestra con una barra la mezcla de tipos de proyecto que tiene.",
+      "Cientos de proyectos de la comunidad para jugar clásicos de Nintendo 64, PlayStation, Xbox 360 y más sin emulador estaban repartidos entre listas, wikis y repositorios sueltos. Este catálogo los reúne en un solo sitio y responde a la pregunta que importa: ¿qué puedo jugar hoy y cómo?",
+      "La portada empieza por un buscador y un mosaico de carátulas. Debajo, «Listos para jugar en PC» filtra los ports que ya funcionan de principio a fin o casi, cada uno con una ficha de qué necesitas, dónde descargarlo y cómo instalarlo; «Juega en el navegador» reúne los que se abren sin instalar nada, y el catálogo completo ordena todo por estrellas y por consola.",
     ],
     role: "Diseño, desarrollo y curación de datos",
     stack: ["Datos de GitHub", "ecosyste.ms", "Solar Icons", "Chakra Petch"],
     highlights: [
-      "Búsqueda por juego, consola o repositorio, con filtros por consola y tipo, y orden por estrellas.",
-      "Carruseles con los 12 repos más populares y los 12 con actividad más reciente.",
-      "Exploración por consola con una barra que resume la mezcla de tipos de port.",
-      "Selector de animaciones para quien prefiere menos movimiento.",
+      "Fichas por juego con qué necesitas, enlaces de descarga y pasos de instalación.",
+      "Juegos listos para PC con carátula, filtro por consola y estado «Completo» o «Jugable».",
+      "Juegos que se abren en el navegador, solo con datos gratuitos o los archivos de tu copia.",
+      "Catálogo completo con búsqueda, filtros por tipo y consola, lo más popular y lo más reciente.",
     ],
     stats: [
-      { value: "1.192", label: "repositorios" },
-      { value: "29", label: "consolas" },
-      { value: "17.5k", label: "estrellas el más popular" },
+      { value: "1.597", label: "proyectos" },
+      { value: "247", label: "listos para jugar en PC" },
+      { value: "12", label: "se juegan en el navegador" },
     ],
     images: {
       cover: "assets/projects/ports-cover.jpg",
       // Captura alta: se desplaza al pasar el ratón por la tarjeta
       scroll: "assets/projects/ports-scroll.jpg",
-      gallery: ["assets/projects/ports-detail.jpg"],
+      gallery: ["assets/projects/ports-game.jpg", "assets/projects/ports-web.jpg"],
     },
   },
   {
