@@ -120,35 +120,35 @@ export const projects = [
   {
     slug: "que-cenamos",
     title: "¿Qué cenamos?",
-    kicker: "Web app · IA",
+    kicker: "Web app · Lectura local",
     year: "2026",
     url: "https://que-cenamos-omega.vercel.app",
     accent: "#f0844f",
     icon: "chef-hat",
     summary:
-      "Sube fotos de tu compra o de tu factura y descubre qué cocinar con lo que ya tienes en casa.",
+      "Sube fotos de tu compra o de tu factura y descubre qué cocinar con lo que ya tienes. Las fotos se leen en tu teléfono, sin IA y sin subirlas.",
     description: [
-      "La pregunta de cada noche, resuelta con lo que ya hay en la despensa. La app lee las fotos de la compra o del ticket, separa los alimentos de todo lo demás y propone tres cenas distintas con esos ingredientes.",
-      "El flujo es Compra → Despensa → Cena: confirmas lo dudoso (nada se inventa), eliges una idea y la cocinas paso a paso con temporizadores. Un código de casa sincroniza la despensa entre dispositivos.",
+      "La pregunta de cada noche, resuelta con lo que ya hay en la despensa. La app lee la factura en el propio dispositivo —texto, códigos de barras, el QR del ticket o un PDF—, une varias fotos de una misma compra, comprueba que cuadre con el total y aparta lo que no es comida.",
+      "El flujo es Compra → Despensa → Cena: confirmas lo dudoso (nada se inventa), eliges entre ideas de un recetario dominicano y casero con lo que ya tienes y la cocinas paso a paso con temporizadores. Además planea la semana, arma la lista de compra y sincroniza la casa entre dispositivos con un código.",
     ],
     role: "Producto, diseño y desarrollo",
-    stack: ["JavaScript", "Claude API", "Visión por IA", "Bricolage Grotesque"],
+    stack: ["Tesseract.js", "pdf.js", "Open Food Facts", "Open Sans"],
     highlights: [
-      "Une varias fotos de una misma factura sin duplicar líneas.",
-      "Aparta productos que no son comida, como los de limpieza.",
-      "Tres ideas de cena distintas con lo que tienes, paso a paso y con temporizadores.",
-      "Código de casa para usar la misma despensa en otro dispositivo.",
+      "OCR en el navegador: las fotos nunca salen del dispositivo.",
+      "Une las fotos de una factura larga sin duplicar líneas y la cuadra con el total.",
+      "Recetario dominicano y casero que propone cenas con lo que tienes y avisa qué usar primero.",
+      "Plan de cenas para la semana y lista de compra con lo que falta.",
     ],
     stats: [
+      { value: "300+", label: "recetas" },
       { value: "4", label: "pasos de la compra a la cena" },
-      { value: "3", label: "ideas de cena por despensa" },
-      { value: "0", label: "ingredientes inventados" },
+      { value: "0", label: "fotos subidas" },
     ],
     images: {
       cover: "assets/projects/cenamos-cover.jpg",
-      // Sin captura alta: al pasar el ratón cambia a la segunda imagen
-      hover: "assets/projects/cenamos-demo.jpg",
-      gallery: ["assets/projects/cenamos-demo.jpg"],
+      // Captura alta: se desplaza al pasar el ratón por la tarjeta
+      scroll: "assets/projects/cenamos-scroll.jpg",
+      gallery: ["assets/projects/cenamos-review.jpg", "assets/projects/cenamos-today.jpg", "assets/projects/cenamos-week.jpg"],
     },
   },
 ];
